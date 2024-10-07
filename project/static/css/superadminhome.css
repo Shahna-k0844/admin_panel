@@ -1,0 +1,7 @@
+table th,td{
+    border: 1px solid black;
+}
+section{
+    background-color: black;
+    background-image: url(backgound.png);
+}

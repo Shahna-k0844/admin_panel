@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends "common.html" %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    {% block contents %}
+    <section style="background-image: url('{% static 'images/background.png' %}');background-size: cover; background-repeat: no-repeat;;height:50em">
+        
+        <!-- <h5 style="padding-inline:22em;font-weight:600;padding-top:3em">CREATE ADMIN</h5> -->
+        <div  style="width:85em;padding-top:5em;padding-inline:22em;background-color:161a1d">
+            <form class="shadow p-5" action="" method='post' style="background-color:rgb(254, 254, 254) ;outline:none;border-color:black">
+                {% csrf_token %}
+                    <h4 style="text-align: center;color:black">Edit Admin</h4>
+                    
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Name</label>
+                        <input type="name" class="form-control" id="exampleInputPassword1" name='name' value='{{edit.name}}'> 
+                    </div>
+                    <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='username'value='{{edit.username}}'>
+                    </div>
+                    <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name='password' value='{{edit.password}}'>
+                    </div>
+                    <button type="submit" style="background-color: rgb(39, 38, 46);width:6.5em;border-color:black" class="btn btn-primary btn-sm">Save</button>
+                    
+        
+                   
+            </form>
+            
+    </section>
+    {% endblock %}
+</body>
+</html>
